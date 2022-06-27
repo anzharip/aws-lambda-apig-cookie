@@ -1,0 +1,55 @@
+{
+  "name": "@anzp/aws-lambda-apig-cookie",
+  "version": "0.0.1",
+  "description": "Module to parse AWS Lambda API Gateway events and extract cookies",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "test:cov": "jest --coverage",
+    "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "prebuild": "rimraf dist",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anzharip/azure-function-multipart.git"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "api gateway",
+    "cookie",
+    "http"
+  ],
+  "author": "Anzhari Purnomo",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/anzharip/aws-lambda-apig-cookie/issues"
+  },
+  "homepage": "https://github.com/anzharip/aws-lambda-apig-cookie",
+  "devDependencies": {
+    "@types/jest": "^27.5.2",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "jest": "^27.5.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.1.5",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.0"
+  }
+}
