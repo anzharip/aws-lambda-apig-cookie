@@ -1,3 +1,5 @@
+import setCookieParser from "set-cookie-parser";
+
 type ApiGatewayHttpApiProxyEvent = {
   version: string;
   routeKey: string;
@@ -14,7 +16,7 @@ type ApiGatewayHttpApiProxyEvent = {
 };
 
 type CookieResult = {
-  [key: string]: Array<string> | Array<Record<string, string | boolean>>;
+  [key: string]: Array<string> | Array<setCookieParser.Cookie>;
 };
 
 enum CookieAttribute {

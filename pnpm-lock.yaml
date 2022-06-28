@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@types/jest': ^27.5.2
   '@types/node': ^18.0.0
+  '@types/set-cookie-parser': ^2.4.2
   '@typescript-eslint/eslint-plugin': ^5.29.0
   '@typescript-eslint/parser': ^5.29.0
   eslint: ^8.18.0
@@ -19,14 +20,17 @@ specifiers:
   lint-staged: '>=10'
   prettier: ^2.7.1
   rimraf: ^3.0.2
+  set-cookie-parser: ^2.5.0
   ts-jest: ^27.1.5
   typescript: ^4.7.4
 
 dependencies:
-  '@types/node': 18.0.0
+  set-cookie-parser: 2.5.0
 
 devDependencies:
   '@types/jest': 27.5.2
+  '@types/node': 18.0.0
+  '@types/set-cookie-parser': 2.4.2
   '@typescript-eslint/eslint-plugin': 5.29.0_qqmbkyiaixvppdwswpytuf2hgm
   '@typescript-eslint/parser': 5.29.0_b5e7v2qnwxfo6hmiq56u52mz3e
   eslint: 8.18.0
@@ -754,9 +758,16 @@ packages:
 
   /@types/node/18.0.0:
     resolution: {integrity: sha512-cHlGmko4gWLVI27cGJntjs/Sj8th9aYwplmZFwmmgYQQvL5NUsgVJG7OddLvNfLqYS31KFN0s3qlaD9qCaxACA==}
+    dev: true
 
   /@types/prettier/2.6.3:
     resolution: {integrity: sha512-ymZk3LEC/fsut+/Q5qejp6R9O1rMxz3XaRHDV6kX8MrGAhOSPqVARbDi+EZvInBpw+BnCX3TD240byVkOfQsHg==}
+    dev: true
+
+  /@types/set-cookie-parser/2.4.2:
+    resolution: {integrity: sha512-fBZgytwhYAUkj/jC/FAV4RQ5EerRup1YQsXQCh8rZfiHkc4UahC192oH0smGwsXol3cL3A5oETuAHeQHmhXM4w==}
+    dependencies:
+      '@types/node': 18.0.0
     dev: true
 
   /@types/stack-utils/2.0.1:
@@ -3644,6 +3655,10 @@ packages:
     dependencies:
       lru-cache: 6.0.0
     dev: true
+
+  /set-cookie-parser/2.5.0:
+    resolution: {integrity: sha512-cHMAtSXilfyBePduZEBVPTCftTQWz6ehWJD5YNUg4mqvRosrrjKbo4WS8JkB0/RxonMoohHm7cOGH60mDkRQ9w==}
+    dev: false
 
   /shebang-command/2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}

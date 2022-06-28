@@ -1,4 +1,5 @@
 import { ApiGatewayHttpApiProxyEvent, CookieResult } from "./types/types.type";
+import setCookieParser from "set-cookie-parser";
 
 class ApiGatewayHttpApiProxyEventHandler {
   readonly event: ApiGatewayHttpApiProxyEvent;
@@ -15,18 +16,9 @@ class ApiGatewayHttpApiProxyEventHandler {
 function _getCookies(event: ApiGatewayHttpApiProxyEvent): CookieResult {
   const { cookies } = event;
   const cookieStrings = cookies;
-  const cookieObjects: Array<Record<string, string | boolean>> = [];
+  const cookieObjects: Array<setCookieParser.Cookie> = [];
   for (const cookie of cookies) {
-    const items = cookie.split(";");
-    const parsedCookie: Record<string, string | boolean> = {};
-    for (const item of items) {
-      const keyValue = item.split("=");
-      if (keyValue.length === 2) {
-        parsedCookie[keyValue[0].trim()] = keyValue[1].trim();
-      } else {
-        parsedCookie[keyValue[0].trim()] = keyValue[0].trim();
-      }
-    }
+    const parsedCookie = setCookieParser.parseString(cookie);
     cookieObjects.push(parsedCookie);
   }
   return { cookieStrings, cookieObjects };
