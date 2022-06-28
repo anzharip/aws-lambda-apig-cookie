@@ -23,3 +23,11 @@ tsconfig.json
 jest.config.js
 coverage
 .eslintrc.js
+.husky
+.huskyrc.js
+.prettierrc.js
+.prettierignore
+notes.txt
+.travis.yml
+.travis.yml.enc
+lambdas/
