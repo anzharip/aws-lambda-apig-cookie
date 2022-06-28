@@ -20,15 +20,4 @@ class ApiGatewayHttpApiProxyEventHandler {
   }
 }
 
-function _getCookies(event: ApiGatewayHttpApiProxyEvent): CookieResult {
-  const { cookies } = event;
-  const cookieStrings = cookies;
-  const cookieObjects: Array<setCookieParser.Cookie> = [];
-  for (const cookie of cookies) {
-    const parsedCookie = setCookieParser.parseString(cookie);
-    cookieObjects.push(parsedCookie);
-  }
-  return { cookieStrings, cookieObjects };
-}
-
 export { ApiGatewayHttpApiProxyEventHandler };
