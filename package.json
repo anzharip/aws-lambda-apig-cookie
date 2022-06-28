@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/anzharip/aws-lambda-apig-cookie",
   "devDependencies": {
-    "@types/jest": "^27.5.2",
+    "@types/jest": "^28.1.3",
     "@types/set-cookie-parser": "^2.4.2",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
