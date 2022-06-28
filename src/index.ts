@@ -8,8 +8,15 @@ class ApiGatewayHttpApiProxyEventHandler {
     this.event = event;
   }
 
-  public getCookies(): CookieResult {
-    return _getCookies(this.event);
+  getCookies(): CookieResult {
+    const { cookies } = this.event;
+    const cookieStrings = cookies;
+    const cookieObjects: Array<setCookieParser.Cookie> = [];
+    for (const cookie of cookies) {
+      const parsedCookie = setCookieParser.parseString(cookie);
+      cookieObjects.push(parsedCookie);
+    }
+    return { cookieStrings, cookieObjects };
   }
 }
 
