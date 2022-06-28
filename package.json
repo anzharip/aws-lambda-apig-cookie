@@ -13,7 +13,8 @@
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "prebuild": "rimraf dist",
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -41,15 +42,22 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.5.3",
+    "eslint-plugin-n": "^15.2.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "husky": ">=7",
     "jest": "^27.5.1",
+    "lint-staged": ">=10",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.1.5",
     "typescript": "^4.7.4"
   },
   "dependencies": {
     "@types/node": "^18.0.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }
