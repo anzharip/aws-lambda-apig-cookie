@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anzharip/azure-function-multipart.git"
+    "url": "git+https://github.com/anzharip/aws-lambda-apig-cookie.git"
   },
   "keywords": [
     "aws",
