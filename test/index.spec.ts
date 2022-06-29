@@ -1,4 +1,4 @@
-import eventJson from "./fixture/event.json";
+import eventApigJson from "./fixture/event-apig.json";
 import { ApiGatewayHttpApiProxyEventHandler } from "../src/index";
 
 describe("index.js", () => {
@@ -6,7 +6,7 @@ describe("index.js", () => {
     jest.resetAllMocks();
   });
   it("parse the cookies correctly", async () => {
-    const handler = new ApiGatewayHttpApiProxyEventHandler(eventJson);
+    const handler = new ApiGatewayHttpApiProxyEventHandler(eventApigJson);
     const result = handler.getCookies();
     expect(result).toEqual({
       cookieObjects: [
