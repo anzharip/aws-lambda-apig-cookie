@@ -1,7 +1,7 @@
 {
   "name": "@anzp/aws-lambda-cookie",
   "version": "0.0.5",
-  "description": "Module to parse AWS Lambda API Gateway events and extract cookies",
+  "description": "Module to parse AWS Lambda events and extract their cookies",
   "publishConfig": {
     "access": "public"
   },
