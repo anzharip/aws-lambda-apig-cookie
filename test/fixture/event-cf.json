@@ -1,0 +1,40 @@
+{
+    "Records": [
+        {
+            "cf": {
+                "config": {
+                    "distributionId": "EXAMPLE"
+                },
+                "request": {
+                    "uri": "/test",
+                    "method": "GET",
+                    "clientIp": "2001:cdba::3257:9652",
+                    "headers": {
+                        "user-agent": [
+                            {
+                                "key": "User-Agent",
+                                "value": "Test Agent"
+                            }
+                        ],
+                        "host": [
+                            {
+                                "key": "Host",
+                                "value": "d123.cf.net"
+                            }
+                        ],
+                        "cookie": [
+                            {
+                                "key": "Cookie",
+                                "value": "nevergonnagiveyouup"
+                            },
+                            {
+                                "key": "Cookie",
+                                "value": "nevergonna=bringyoudown; secure; httponly; samesite=strict; path=/; domain=.example.com; max-age=3600; expires=Mon, 01-Jan-2020 00:00:00 GMT; version=1; comment=something; commenturl=http://example.com/"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

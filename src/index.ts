@@ -1,4 +1,8 @@
-import { ApiGatewayHttpApiProxyEvent, CookieResult } from "./types/types.type";
+import {
+  ApiGatewayHttpApiProxyEvent,
+  CloudfrontViewerRequestEvent,
+  CookieResult,
+} from "./types/types.type";
 import setCookieParser from "set-cookie-parser";
 
 class ApiGatewayHttpApiProxyEventHandler {
@@ -20,4 +24,29 @@ class ApiGatewayHttpApiProxyEventHandler {
   }
 }
 
-export { ApiGatewayHttpApiProxyEventHandler };
+class CloudfrontViewerRequestEventHandler {
+  readonly event: CloudfrontViewerRequestEvent;
+
+  constructor(event: CloudfrontViewerRequestEvent) {
+    this.event = event;
+  }
+
+  getCookies(): CookieResult {
+    const { cookie } = this.event.Records[0].cf.request.headers;
+    const cookieStrings = [];
+    const cookieObjects: Array<setCookieParser.Cookie> = [];
+    for (const cookieItem of cookie) {
+      const { value } = cookieItem;
+      const cookieString = value;
+      cookieStrings.push(cookieString);
+      const parsedCookie = setCookieParser.parseString(cookieString);
+      cookieObjects.push(parsedCookie);
+    }
+    return { cookieStrings, cookieObjects };
+  }
+}
+
+export {
+  ApiGatewayHttpApiProxyEventHandler,
+  CloudfrontViewerRequestEventHandler,
+};

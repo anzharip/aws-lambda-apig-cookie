@@ -15,8 +15,32 @@ type ApiGatewayHttpApiProxyEvent = {
   stageVariables: { [key: string]: string };
 };
 
+type CfRecord = {
+  cf: {
+    config: Record<string, unknown>;
+    request: {
+      uri: string;
+      method: string;
+      clientIp: string;
+      headers: {
+        "user-agent": Array<{ key: string; value: string }>;
+        host: Array<{ key: string; value: string }>;
+        cookie: Array<{ key: string; value: string }>;
+      };
+    };
+  };
+};
+
+type CloudfrontViewerRequestEvent = {
+  Records: Array<CfRecord>;
+};
+
 type CookieResult = {
   [key: string]: Array<string> | Array<setCookieParser.Cookie>;
 };
 
-export { ApiGatewayHttpApiProxyEvent, CookieResult };
+export {
+  ApiGatewayHttpApiProxyEvent,
+  CloudfrontViewerRequestEvent,
+  CookieResult,
+};
