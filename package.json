@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest",
     "test:cov": "jest --coverage",
-    "test:sam": "cd lambdas && cd lambda-nodejs16.x && sh test.sh",
+    "test:sam": "cd lambdas && cd lambda-nodejs16.x && sh test-apig.sh",
     "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
     "lint": "eslint \"{src,test}/**/*.ts\"",
     "prebuild": "rimraf dist",
