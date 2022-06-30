@@ -1,4 +1,4 @@
-# aws-lambda-apig-cookie-check
+# aws-lambda-cookie
 
 [![Build and Test](https://github.com/anzharip/aws-lambda-cookie/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/anzharip/aws-lambda-cookie/actions)
 [![codecov](https://codecov.io/gh/anzharip/aws-lambda-cookie/branch/main/graph/badge.svg?token=LWQJDZNQV7)](https://codecov.io/gh/anzharip/aws-lambda-cookie)
