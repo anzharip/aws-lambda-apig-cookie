@@ -1,13 +1,13 @@
-import eventApigJson from "./fixture/event-apig.json";
-import eventCfJson from "./fixture/event-cf.json";
 import {
   ApiGatewayHttpApiProxyEventHandler,
   CloudfrontViewerRequestEventHandler,
 } from "../src/index";
+import eventApigJson from "./fixture/event-apig.json";
+import eventCfJson from "./fixture/event-cf.json";
 
 const cookieResult = {
   cookieObjects: [
-    { name: "nevergonnagiveyouup", value: "" },
+    { name: "", value: "nevergonnagiveyouup" },
     {
       name: "nevergonna",
       value: "bringyoudown",
@@ -44,5 +44,14 @@ describe("index.js", () => {
     const handler = new CloudfrontViewerRequestEventHandler(eventCfJson);
     const result = handler.getCookies();
     expect(result).toEqual(cookieResult);
+  });
+
+  it("should conform to 6265bis; name-value-pair string lacks a %x3D (=) character, then the name string is empty, and the value string is the value of name-value-pair", async () => {
+    const handler = new CloudfrontViewerRequestEventHandler(eventCfJson);
+    const result = handler.getCookies();
+    expect(result.cookieObjects[0]).toEqual({
+      name: "",
+      value: "nevergonnagiveyouup",
+    });
   });
 });
